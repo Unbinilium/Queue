@@ -28,7 +28,7 @@ Note that in some use cases, the container inside the queue would change the ite
 
 int main() {
     ubn::queue<int> q;
-    auto t[] = {
+    std::jthread t[] = {
         std::jthread([&]() {
             for (const auto& i : std::views::iota(0, 10))
                 std::cout << "thr1: pop <- " << q.pop() << "\n";
